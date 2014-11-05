@@ -5,6 +5,8 @@ OBJ=mm_wrap.o
 
 all: _mm.so
 
+.SECONDARY: mm_wrap.cxx
+
 _mm.so: $(OBJ)
 	$(CXX) -g -shared -Wl,-soname,_mm.so -o $@ $^ $(LIB)
 
